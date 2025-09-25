@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="org.example.vueback1.mapper.IndentRecordMapper">
+
+    <!-- 通用查询映射结果 -->
+    <resultMap id="BaseResultMap" type="org.example.vueback1.entity.IndentRecord">
+        <id column="id" property="id" />
+        <result column="indent_id" property="indentId" />
+        <result column="courier_id" property="courierId" />
+        <result column="station_id" property="stationId" />
+        <result column="status" property="status" />
+        <result column="time" property="time" />
+    </resultMap>
+
+    <!-- 通用查询结果列 -->
+    <sql id="Base_Column_List">
+        indent_id, courier_id, station_id, status, id, time
+    </sql>
+
+</mapper>

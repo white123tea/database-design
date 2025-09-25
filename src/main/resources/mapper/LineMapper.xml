@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="org.example.vueback1.mapper.LineMapper">
+
+    <!-- 通用查询映射结果 -->
+    <resultMap id="BaseResultMap" type="org.example.vueback1.entity.Line">
+        <id column="id" property="id" />
+        <result column="station_a_id" property="stationAId" />
+        <result column="station_b_id" property="stationBId" />
+        <result column="distance" property="distance" />
+    </resultMap>
+
+    <!-- 通用查询结果列 -->
+    <sql id="Base_Column_List">
+        id, station_a_id, station_b_id, distance
+    </sql>
+
+</mapper>

@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="org.example.vueback1.mapper.StationMapper">
+
+    <!-- 通用查询映射结果 -->
+    <resultMap id="BaseResultMap" type="org.example.vueback1.entity.Station">
+        <id column="station_id" property="stationId" />
+        <result column="station_name" property="stationName" />
+        <result column="station_addr" property="stationAddr" />
+        <result column="manager_id" property="managerId" />
+    </resultMap>
+
+    <!-- 通用查询结果列 -->
+    <sql id="Base_Column_List">
+        station_id, station_name, station_addr
+    </sql>
+
+    <!-- 不分页：查询所有符合条件的站点 -->
+    <select id="listC" resultType="org.example.vueback1.entity.Station">
+        SELECT * FROM station_view
+        <where>
+            <if test="stationName != null and stationName != ''">
+                AND station_name LIKE CONCAT('%', #{stationName}, '%')
+            </if>
+        </where>
+    </select>
+
+</mapper>
